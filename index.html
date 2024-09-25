@@ -13,25 +13,27 @@
       }
     </style>
     <script>
-      window.onload = function () {
-        Swal.fire({
-          icon: "info",
-          title: "Perhatian!",
-          text: "Dengerin Yah VN nya",
-          confirmButtonText: "OK",
-          allowOutsideClick: false,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            setTimeout(function () {
-              var audio = new Audio("rekaman.m4a");
-              audio.play();
-            }, 500);
-          }
-        });
-      };
-    </script>
+  window.onload = function () {
+    Swal.fire({
+      icon: "info",
+      title: "Perhatian!",
+      text: "Dengerin Yah VN nya",
+      confirmButtonText: "OK",
+      allowOutsideClick: false,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setTimeout(function () {
+          var audio1 = new Audio("rekaman.m4a");
+          var audio2 = new Audio("titanic_soundtrack.mp3"); // Add the Titanic soundtrack file
+          audio1.play();
+          audio2.play();
+        }, 500);
+      }
+    });
+  };
+</script>
   </head>
   <body></body>
 </html>
