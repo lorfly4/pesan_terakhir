@@ -1,52 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Video Terakhir Kesan Pesan</title> <!-- Updated web title here -->
+    <title>Video Terakhir Kesan Pesan</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
     <style>
-      body {
-        background-image: url(""); /* Add your background image URL here */
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-      }
-      video {
-        max-width: 100%;
-        max-height: 100%;
-        border: 2px solid #fff; /* Optional: adds a border around the video */
-      }
+        body {
+            background-image: url(""); /* Tambahkan URL gambar latar belakang di sini */
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        iframe {
+            width: 80%; /* Sesuaikan lebar sesuai kebutuhan */
+            height: 80%; /* Sesuaikan tinggi sesuai kebutuhan */
+            border: none; /* Opsional: menghapus border di sekitar iframe */
+        }
     </style>
     <script>
-      window.onload = function () {
-        Swal.fire({
-          icon: "info",
-          title: "Video Terakhir Kesan Pesan", // Updated SweetAlert title here
-          text: "Liat Yah Video Nya", // Text remains unchanged
-          confirmButtonText: "OK",
-          allowOutsideClick: false,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            setTimeout(function () {
-              var video = document.getElementById("myVideo");
-              video.play();
-            }, 500);
-          }
-        });
-      };
+        window.onload = function () {
+            Swal.fire({
+                icon: "info",
+                title: "Video Terakhir Kesan Pesan",
+                text: "Liat Yah Video Nya",
+                confirmButtonText: "OK",
+                allowOutsideClick: false,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById("myIframe").style.display = "block"; // Tampilkan iframe
+                    document.getElementById("myIframe").src += "?autoplay=1"; // Tambahkan autoplay
+                }
+            });
+        };
     </script>
-  </head>
-  <body>
-    <video id="myVideo" controls>
-      <source src="https://youtu.be/RhKtEBtS1kA?si=iSoct2xF3eQ9N9UH" type="video/mp4"> <!-- Replace with your video file -->
-      Your browser does not support the video tag.
-    </video>
-  </body>
+</head>
+<body>
+    <iframe id="myIframe" src="https://www.youtube.com/embed/RhKtEBtS1kA" style="display: none;" allowfullscreen></iframe>
+</body>
 </html>
