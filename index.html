@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Video Terakhir Kesan Pesan</title>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video YouTube dengan SweetAlert</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
-            background-image: url(""); /* Tambahkan URL gambar latar belakang di sini */
-            background-repeat: no-repeat;
-            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            background-color: #f0f0f0;
+        }
+        #videoContainer {
+            display: none; /* Sembunyikan video container sampai SweetAlert ditutup */
+            max-width: 100%;
         }
         iframe {
-            width: 80%; /* Sesuaikan lebar sesuai kebutuhan */
-            height: 80%; /* Sesuaikan tinggi sesuai kebutuhan */
-            border: none; /* Opsional: menghapus border di sekitar iframe */
+            width: 560px; /* Atur lebar sesuai kebutuhan */
+            height: 315px; /* Atur tinggi sesuai kebutuhan */
         }
     </style>
+</head>
+<body>
+    <div id="videoContainer">
+        <iframe id="myVideo" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+
     <script>
         window.onload = function () {
             Swal.fire({
@@ -31,17 +38,14 @@
                 confirmButtonText: "OK",
                 allowOutsideClick: false,
                 confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
             }).then((result) => {
                 if (result.isConfirmed) {
-                    document.getElementById("myIframe").style.display = "block"; // Tampilkan iframe
-                    document.getElementById("myIframe").src += "?autoplay=1"; // Tambahkan autoplay
+                    // Tampilkan video setelah SweetAlert ditutup
+                    document.getElementById("videoContainer").style.display = "block";
+                    document.getElementById("myVideo").src = "https://www.youtube.com/embed/dQw4w9WgXcQ"; // URL video YouTube
                 }
             });
         };
     </script>
-</head>
-<body>
-    <iframe id="myIframe" src="https://www.youtube.com/embed/RhKtEBtS1kA" style="display: none;" allowfullscreen></iframe>
 </body>
 </html>
