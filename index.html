@@ -3,37 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dengerin yah zize</title>
+    <title>Video Terakhir Kesan Pesan</title> <!-- Updated web title here -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
     <style>
       body {
-        background-image: url("");
+        background-image: url(""); /* Add your background image URL here */
         background-repeat: no-repeat;
         background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      video {
+        max-width: 100%;
+        max-height: 100%;
+        border: 2px solid #fff; /* Optional: adds a border around the video */
       }
     </style>
     <script>
-  window.onload = function () {
-    Swal.fire({
-      icon: "info",
-      title: "Perhatian!",
-      text: "Dengerin Yah VN nya",
-      confirmButtonText: "OK",
-      allowOutsideClick: false,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        setTimeout(function () {
-          var audio1 = new Audio("rekaman.m4a");
-          var audio2 = new Audio("titanic_soundtrack.mp3"); // Add the Titanic soundtrack file
-          audio1.play();
-          audio2.play();
-        }, 500);
-      }
-    });
-  };
-</script>
+      window.onload = function () {
+        Swal.fire({
+          icon: "info",
+          title: "Video Terakhir Kesan Pesan", // Updated SweetAlert title here
+          text: "Liat Yah Video Nya", // Text remains unchanged
+          confirmButtonText: "OK",
+          allowOutsideClick: false,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            setTimeout(function () {
+              var video = document.getElementById("myVideo");
+              video.play();
+            }, 500);
+          }
+        });
+      };
+    </script>
   </head>
-  <body></body>
+  <body>
+    <video id="myVideo" controls>
+      <source src="your_video_file.mp4" type="video/mp4"> <!-- Replace with your video file -->
+      Your browser does not support the video tag.
+    </video>
+  </body>
 </html>
