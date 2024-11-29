@@ -34,6 +34,42 @@
             Swal.fire({
                 icon: "info",
                 title: "Video Terakhir Kesan Pesan",
+                text: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video YouTube dengan SweetAlert</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #videoContainer {
+            display: none; /* Sembunyikan video container sampai SweetAlert ditutup */
+            max-width: 100%;
+        }
+        iframe {
+            width: 560px; /* Atur lebar sesuai kebutuhan */
+            height: 315px; /* Atur tinggi sesuai kebutuhan */
+        }
+    </style>
+</head>
+<body>
+    <div id="videoContainer">
+        <iframe id="myVideo" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        window.onload = function () {
+            Swal.fire({
+                icon: "info",
+                title: "Video Terakhir Kesan Pesan",
                 text: "Liat Yah Video Nya",
                 confirmButtonText: "OK",
                 allowOutsideClick: false,
